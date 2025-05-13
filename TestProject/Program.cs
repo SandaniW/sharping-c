@@ -52,3 +52,43 @@ else
 {
     Console.WriteLine("You win a kitten!");
 }
+
+//Arrays
+String[] orderId = new String[3];
+orderId[0] = "A123";
+orderId[1] = "B456";
+orderId[2] = "C789";
+//orderId[3] = "D101"; order out of bounds
+Console.WriteLine($"1st: {orderId[0]}");
+Console.WriteLine($"2nd: {orderId[1]}");
+Console.WriteLine($"3rd: {orderId[2]}");
+orderId[0] = "E121";
+Console.WriteLine($"1st(modified): {orderId[0]}");
+string[] fraudulentOrderIDs = [ "A123", "B456", "C789" ];
+//string[] fraudulentOrderIDs = { "A123", "B456", "C789" }; older syntax
+
+Console.WriteLine($"There are {fraudulentOrderIDs.Length} orders.");
+
+string[] names = { "Sandani", "Nulanga", "Dias","Wickramanayake" };
+foreach (string name in names)
+{
+    Console.WriteLine(name);
+}
+
+int[] inventory = { 200, 450, 700, 175, 250 };
+int sum = 0;
+foreach (int items in inventory)
+{
+    sum += items;
+}
+
+Console.WriteLine($"We have {sum} items in inventory.");
+//array calling for each
+String[] checkOrders = ["B123","C234","A345","C15","B177","G3003","C235","B179"];
+foreach (string checkOrder in checkOrders)
+{
+   if(checkOrder.StartsWith("B"))
+   {
+      Console.WriteLine(checkOrder);
+   }
+}
