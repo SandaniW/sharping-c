@@ -76,15 +76,15 @@ do
 {
    // display the top-level menu options
 
-   Console.Clear();
+   //Console.Clear();
 
    Console.WriteLine("Welcome to the Contoso PetFriends app. Your main menu options are:");
    Console.WriteLine(" 1. List all of our current pet information");
    Console.WriteLine(" 2. Add a new animal friend to the ourAnimals array");
    Console.WriteLine(" 3. Ensure animal ages and physical descriptions are complete");
    Console.WriteLine(" 4. Ensure animal nicknames and personality descriptions are complete");
-   Console.WriteLine(" 5. Edit an animal’s age");
-   Console.WriteLine(" 6. Edit an animal’s personality description");
+   Console.WriteLine(" 5. Edit an animals age");
+   Console.WriteLine(" 6. Edit an animals personality description");
    Console.WriteLine(" 7. Display all cats with a specified characteristic");
    Console.WriteLine(" 8. Display all dogs with a specified characteristic");
    Console.WriteLine();
@@ -104,10 +104,32 @@ do
    */
    switch(menuSelection)
 {
-    case "1":
-        break;
+      case "1":
+         for (int i = 0; i < maxPets; i++)
+         {
+            if (ourAnimals[i, 0] != "ID #: ")
+            {
+               Console.WriteLine();
+               for (int j = 0; j < 6; j++)
+               {
+                  Console.WriteLine(ourAnimals[i, j]);
+               }
+            }
+         }
+         Console.WriteLine("Press the Enter key to continue");
+         readResult = Console.ReadLine();
+         break;
 
-    case "2":
+      case "2":
+         string anotherPet = "y";
+         int petCount = 0;
+         for(int i=0;i<maxPets;i++)
+         {
+            if(ourAnimals[i, 0] != "ID #: ")
+            {
+               petCount += 1;
+            }
+         }
         break;
 
     case "3":
